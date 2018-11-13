@@ -71,7 +71,7 @@ ReactDOM.render(
     <h1>React Exercises</h1>
     <Exercises />
   </div>,
-  document.getElementById("app")
+  document.getElementById("exercises")
 );
 
 module.hot.accept();
