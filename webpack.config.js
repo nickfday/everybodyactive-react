@@ -2,7 +2,11 @@ const webpack = require("webpack");
 
 module.exports = {
   watch: true, //
-  entry: { index: "./src/index.js", exercises: "./src/exercises.js" },
+  entry: {
+    index: "./src/exercises.js",
+    exercises: "./src/exercises.js",
+    exerciseDetail: "./src/exerciseDetail.js"
+  },
   module: {
     rules: [
       {
