@@ -3,42 +3,6 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class ExerciseDetail extends React.Component {
-  constructor(props) {
-    super();
-    this.state = {
-      exercise: [],
-      loaded: false
-    };
-  }
-
-  componentDidUpdate() {
-    const self = this;
-    const slug = this.props.match.params.id;
-    const requestExerciseDetail = axios(
-      `http://wpworkoutlog.localhost/wp-json/wp/v2/exercise?slug=${slug}`
-    ).then(function(response) {
-      self.setState({
-        exercise: response.data,
-        loaded: true
-      });
-      console.log(response.data);
-    });
-  }
-
-  render() {
-    if (this.state.loaded) {
-      return <div>{this.state.exercise[0].title.rendered}</div>;
-    } else {
-      return (
-        <div>
-          <div>Loading</div>
-        </div>
-      );
-    }
-  }
-}
-
 const ExerciseSingle = props => {
   console.log(props);
   const exercise = props.exerciseDetail[0];
@@ -79,12 +43,11 @@ const ExerciseRow = props => {
   return (
     <tr>
       <td>
-        {/* <Link to={`?exercise=${props.exercise.slug}`}>About</Link> */}
         <Link
           to={{
-            pathname: props.exercise.slug,
-            search: "?exercise=bench-press",
-            state: { exerciseDetail: props.exerciseDetail }
+            // pathname: props.exercise.slug,
+            pathName: "/",
+            search: `?exercise=${props.exercise.slug}`
           }}
           onClick={e => props.fetchExerciseDetail(props.exercise.slug)}
         >
@@ -198,11 +161,13 @@ class Exercises extends React.Component {
               exerciseDetail={this.state.exerciseDetail}
             />
 
-            <Route
+            <ExerciseSingle exerciseDetail={this.state.exerciseDetail} />
+
+            {/* <Route
               path="/:id"
               component={ExerciseDetail}
               exercise={this.state.exerciseDetail}
-            />
+            /> */}
           </div>
         </Router>
       );
