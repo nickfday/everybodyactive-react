@@ -1,6 +1,12 @@
-# minimal-react-webpack-babel-setup
+# React application
+Frontend application used in particially decoupled Wordpress [site](http://everybodyactive.localhost/fitness-for-young-people/
+)
 
-[![Build Status](https://travis-ci.org/rwieruch/minimal-react-webpack-babel-setup.svg?branch=master)](https://travis-ci.org/rwieruch/minimal-react-webpack-babel-setup) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/rwieruch/minimal-react-webpack-babel-setup.svg)](https://greenkeeper.io/)
+## Tech Used
+
+* React
+* Sass
+* CSS Grid
 
 Read more about it: [The Minimal React Webpack Babel Setup](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/)
 
