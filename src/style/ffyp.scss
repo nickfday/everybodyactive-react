@@ -1,0 +1,137 @@
+@media only screen and (min-width: 940px) {
+  // .app-wrapper {
+  //   width: 1000px;
+  // }
+  .activity-wrapper {
+    grid-template-columns: 2fr 2fr;
+  }
+  .activity-body-wrapper {
+    width: 200%;
+  }
+  .activity-body-wrapper.shown.index-1,
+  .activity-body-wrapper.shown.index-3 {
+    margin-left: -100%;
+  }
+}
+
+.app-wrapper {
+  margin: 0 auto;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+}
+
+.activity-wrapper {
+  display: grid;
+  margin-bottom: 50px;
+  //grid-template-rows: 25% 100px auto;
+  .activity {
+    background-size: cover;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    &:hover .activity-content {
+      transform: scale(1.1);
+    }
+  }
+  .activity-content {
+    transition: all 0.3s;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    .title {
+      font-weight: 500;
+      font-size: 30px;
+      background: rgba(000, 000, 000, 0.6);
+      color: #fff;
+      padding: 5px 10px;
+    }
+  }
+  .activity:after,
+  .activity:before {
+    bottom: -20px;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+.activity.shown:after {
+  border-color: rgba(0, 0, 0, 0);
+  border-bottom-color: #000000;
+  border-width: 30px;
+  margin-left: -30px;
+}
+.activity.shown:before {
+  border-color: rgba(0, 0, 0, 0);
+  border-bottom-color: #000;
+  border-width: 36px;
+  margin-left: -36px;
+}
+
+.activity-body-wrapper {
+  background: #000;
+  color: #fff;
+  &.hidden {
+    opacity: 0;
+    height: 0;
+    // transition: opacity 1s linear;
+  }
+  &.shown {
+    overflow-y: hidden;
+    opacity: 1;
+    min-height: 160px;
+    transition: opacity 0.7s linear;
+  }
+}
+
+.activity-body {
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 20px 20px;
+  p {
+    margin: 0 !important;
+  }
+}
+
+.find-out-more {
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  a {
+    text-decoration: none;
+  }
+  .title {
+    font-weight: 500;
+    font-size: 30px;
+    background: rgba(000, 000, 000, 0.6);
+    color: #fff;
+    padding: 5px 10px;
+  }
+  // .title {
+  //   position: absolute;
+  //   left: 50%;
+  //   top: 50%;
+  //   transform: translate(-50%, -50%);
+  //   color: #fff;
+  //   text-decoration: underline;
+  // }
+}
