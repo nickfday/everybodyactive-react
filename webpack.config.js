@@ -3,9 +3,8 @@ const webpack = require("webpack");
 module.exports = {
   watch: true, //
   entry: {
-    index: "./src/exercises.js",
-    exercises: "./src/exercises.js",
-    exerciseDetail: "./src/exerciseDetail.js"
+    index: "./src/index.js",
+    ffyp: "./src/ffyp.js"
   },
   module: {
     rules: [
@@ -13,6 +12,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
+      },
+      {
+        test: /\.s?css/,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
